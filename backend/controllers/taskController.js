@@ -29,11 +29,6 @@ exports.getTasks = async (req, res) => {
   res.json({ tasks, total });
 };
 
-exports.getTaskById = async (req, res) => {
-  const task = await Task.findById(req.params.id);
-  res.json(task);
-};
-
 exports.updateTask = async (req, res) => {
   const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
