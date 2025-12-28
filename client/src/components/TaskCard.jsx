@@ -2,6 +2,7 @@ import { Card, CardContent, Typography, Button } from "@mui/material";
 import api from "../api/axios";
 
 export default function TaskCard({ task, reload }) {
+// put and delete 
   const toggleStatus = async () => {
     await api.put(`/tasks/${task._id}`, {
       status: task.status === "pending" ? "completed" : "pending",
